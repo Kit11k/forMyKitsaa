@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("MainActivity1", "OnCreate");
 
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Retrofit retrofit=new Retrofit.Builder()
