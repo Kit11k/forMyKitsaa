@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Retrofit retrofit=new Retrofit.Builder()
-                .baseUrl("https://x-colors.herokuapp.com")
+                .baseUrl("https://api.openweathermap.org")
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
         MessageAPI messageAPI=retrofit.create(MessageAPI.class);
@@ -40,18 +40,47 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-        
 
-
-
-
-
-
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("MainActivity", "OnStart");
     }
-    public interface MessageAPI{
-        @GET("https://x-colors.herokuapp.com/api/random")
-        Call<String> message();
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i("MainActivity", "OnRestart");
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("MainActivity", "OnResume");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("MainActivity", "OnDestroy");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("MainActivity", "OnStop");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("MainActivity", "OnPause");
+    }
+
 
 }
+/*public interface MessageAPI{
+        @GET("http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=5a185bebc490568bc569eb2c3ef1236d")
+        Call<String> message();
+}*/
+
