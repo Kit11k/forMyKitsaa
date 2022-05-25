@@ -2,8 +2,12 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -17,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        EditText edt;
+
         Log.i("MainActivity1", "OnCreate");
 
 
@@ -26,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
                 .baseUrl("https://api.openweathermap.org")
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
+        edt = findViewById(R.id.City);
+        Button but1 = findViewById(R.id.button1);
+        but1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,MainActivity2.class);
+                intent.putExtra("Key",edt.getText().toString());
+                startActivity(intent);
+            }
+        });
         MessageAPI messageAPI=retrofit.create(MessageAPI.class);
         Call<String> message=messageAPI.message();
         message.enqueue(new Callback<String>() {
@@ -79,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
-/*public interface MessageAPI{
+public interface MessageAPI{
         @GET("http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=5a185bebc490568bc569eb2c3ef1236d")
         Call<String> message();
-}*/
+}
 
