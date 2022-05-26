@@ -24,9 +24,9 @@ public class MainActivity2 extends AppCompatActivity {
                 .baseUrl("https://api.openweathermap.org")//базовая часть адреса
                 .addConverterFactory(GsonConverterFactory.create())//конвертер
                 .build();
-        WeatherOneDayAPIService weatherOneDayApi;
-        weatherOneDayApi=retrofit.create(WeatherOneDayAPIService.class);//создали объект, с его помощью будем отправлять запросы
-        weatherOneDayApi.getWeatherByCityName( edt getText().toString(),"3d822b9dce4e57f12b9b3400d480a358").
+        WeatherOneDayApiService WeatherOneDayApi;
+        WeatherOneDayApi=retrofit.create(WeatherOneDayApiService.class);//создали объект, с его помощью будем отправлять запросыN
+        WeatherOneDayApi.getWeatherByCityName(getText().toString(),"3d822b9dce4e57f12b9b3400d480a358").
                 enqueue(new Callback<Example>() {//aссинхронный вызов (для синхронного был бы метод execute() )
                     @Override
                     public void onResponse(Call<Example> call, Response<Example> response) {
