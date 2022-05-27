@@ -11,7 +11,9 @@ d
 4app/src/main/java/com/example/myapplication/Sys.java,2\a\2a42cd5ead01a649321a6cd793362e748a0d5988
 h
 8app/src/main/java/com/example/myapplication/Weather.java,2\f\2f60719ebfb6d7007b7761897e51252c8a69adb0
-e
-5app/src/main/java/com/example/myapplication/Wind.java,2\0\205073e51ab15877908a445d3bf27f43fe5b0281
 p
 @app/src/main/java/com/example/myapplication/ImageDownloader.java,a\5\a5879ce33fde7b581b78f7f68405e708668b8fc4
+k
+;app/src/main/java/com/example/myapplication/MessageAPI.java,c\f\cf2781bf1372c078f3ad35a33744ab2181ffeb45
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
