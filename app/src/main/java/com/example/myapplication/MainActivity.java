@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
 }
 /*public interface MessageAPI{
-        @GET("http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=5a185bebc490568bc569eb2c3ef1236d")
+        @GET("https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=5a185bebc490568bc569eb2c3ef1236d")
         Call<String> message();
 }*/
 

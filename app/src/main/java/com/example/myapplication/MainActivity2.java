@@ -1,6 +1,6 @@
 package com.example.myapplication;
-
 import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.os.Bundle;
 import android.util.Log;
@@ -24,10 +24,10 @@ public class MainActivity2 extends AppCompatActivity {
                 .baseUrl("https://api.openweathermap.org")//базовая часть адреса
                 .addConverterFactory(GsonConverterFactory.create())//конвертер
                 .build();
-        WeatherOneDayApiService WeatherOneDayApi;
-        WeatherOneDayApi=retrofit.create(WeatherOneDayApiService.class);//создали объект, с его помощью будем отправлять запросыN
-        WeatherOneDayApi.getWeatherByCityName(getText().toString(),"3d822b9dce4e57f12b9b3400d480a358").
-                enqueue(new Callback<Example>() {//aссинхронный вызов (для синхронного был бы метод execute() )
+        WeatherOneDayApiService weatherOneDayApi;
+        weatherOneDayApi=retrofit.create(WeatherOneDayApiService.class);//создали объект, с его помощью будем отправлять запросыN
+        weatherOneDayApi.getWeatherByCityName("Kiev,ua","5a185bebc490568bc569eb2c3ef1236d");
+                enqueue(new Callback<Example>() {
                     @Override
                     public void onResponse(Call<Example> call, Response<Example> response) {
                         if (response.isSuccessful()) {
@@ -46,4 +46,6 @@ public class MainActivity2 extends AppCompatActivity {
                 });
 
     }
-}
+
+    }
+
