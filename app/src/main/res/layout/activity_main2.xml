@@ -9,17 +9,14 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/City"
-        ></EditText>
+        android:id="@+id/сity" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/wind"
-        ></EditText>
+        android:id="@+id/wind" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/temp"
-        ></EditText>
+        android:id="@+id/temp" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

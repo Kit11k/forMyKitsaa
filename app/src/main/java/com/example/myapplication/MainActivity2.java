@@ -10,7 +10,7 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(android.os.Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.example.myapplication.R.layout.activity_main2);
-        android.widget.EditText edt = findViewById(com.example.myapplication.R.id.City);
+        android.widget.EditText edt = findViewById(com.example.myapplication.R.id.сity);
         edt.setText(getIntent().getExtras().get("Key").toString());
         retrofit2.Retrofit retrofit = new retrofit2.Retrofit.Builder()
                 .baseUrl("https://api.openweathermap.org")//базовая часть адреса
@@ -36,10 +36,6 @@ public class MainActivity2 extends AppCompatActivity {
                         android.util.Log.i("Jane","Failure "+t);
                     }
                 });
-
     }
-
-
-
 }
 

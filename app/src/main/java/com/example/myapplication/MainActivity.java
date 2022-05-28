@@ -1,7 +1,5 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,19 +8,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
-import retrofit2.http.GET;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        EditText edt;
+
 
         Log.i("MainActivity1", "OnCreate");
 
@@ -33,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
                 .baseUrl("https://api.openweathermap.org")
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
-        edt = findViewById(R.id.City);
+        EditText edt;
+        edt = findViewById(R.id.сity);
         Button but1 = findViewById(R.id.button1);
         but1.setOnClickListener(new View.OnClickListener() {
             @Override
