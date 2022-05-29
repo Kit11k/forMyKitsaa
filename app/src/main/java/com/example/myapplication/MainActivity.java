@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,17 +33,10 @@ public class MainActivity extends AppCompatActivity {
                 .baseUrl("https://api.openweathermap.org")
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
-        EditText edt;
+        TextView edt;
         edt = findViewById(R.id.сity);
         Button but1 = findViewById(R.id.button1);
-        but1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                intent.putExtra("Key", edt.getText().toString());
-                startActivity(intent);
-            }
-        });
+
         MessageAPI messageAPI = retrofit.create(MessageAPI.class);
         Call<String> message = messageAPI.message();
         message.enqueue(new Callback<String>() {
@@ -57,6 +51,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+        but1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                intent.putExtra("Key", edt.getText().toString());
+                startActivity(intent);
+            }
+        });
 
         Button but2 = findViewById(R.id.button2);
 
